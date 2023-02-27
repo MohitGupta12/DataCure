@@ -20,6 +20,9 @@ class Header extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(
+            height: 12,
+          ),
         ],
       ),
     );
