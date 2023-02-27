@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_unnecessary_containers
 import 'package:flutter/material.dart';
 
-import 'LoginPage.dart';
+import './Authentication/LoginPage.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
