@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_unnecessary_containers
 import 'package:flutter/material.dart';
+import 'package:login/screens/gettingStarted.dart';
 
 import 'LoginPage.dart';
 
@@ -20,7 +21,7 @@ class _SplashState extends State<Splash> {
   _navigatetohome() async {
     await Future.delayed(Duration(milliseconds: 2000), () {});
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => LoginPage()));
+        context, MaterialPageRoute(builder: (context) => GettingStarted()));
   }
 
   @override
