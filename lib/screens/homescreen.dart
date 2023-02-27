@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
-
-import 'package:login/screens/profilescreen.dart';
-
-import 'lockerscreen.dart';
+import 'package:datacure/screens/profilescreen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -18,21 +14,22 @@ class _HomeScreenState extends State<HomeScreen> {
 
   static final List<Widget> _widgetOptions = <Widget>[
     const HomeScreenBody(),
-    const LockerPage(),
+    Container(
+      color: Colors.pink,
+    ),
     Container(
       color: Colors.green,
     ),
     const ProfilePage(),
   ];
-  bool showFAB = true;
 
   @override
   Widget build(BuildContext context) {
     final double size = MediaQuery.of(context).size.width;
+    final double borderRadius = size * 0.36;
     return Scaffold(
       backgroundColor: const Color(0xff2d3c4e),
       appBar: AppBar(
-        leading: const Icon(Icons.access_alarm),
         automaticallyImplyLeading: false,
         backgroundColor: const Color(0xff2d3c4e),
         elevation: 0,
@@ -53,35 +50,39 @@ class _HomeScreenState extends State<HomeScreen> {
 
       body: _widgetOptions.elementAt(_selectedIndex),
       // ignore: prefer_const_constructors
-
-//camera scanner button laga dia h visibility on profile page ka issue h abhi
-      floatingActionButton: Visibility(
-        visible: showFAB,
-        child: FloatingActionButton(
-          elevation: 10,
-
-          //shape: CircleBorder(),
-          backgroundColor: const Color(0xff2d3c4e),
-          child: const Icon(Icons.document_scanner_outlined),
-          onPressed: () {},
-        ),
-      ),
-      floatingActionButtonLocation:
-          FloatingActionButtonLocation.miniCenterDocked,
-
-      bottomNavigationBar: AnimatedBottomNavigationBar(
-        icons: [Icons.home, Icons.lock, Icons.description, Icons.person],
-        //   icons: iconList,
-        activeIndex: _selectedIndex,
-        gapLocation: GapLocation.center,
-        notchSmoothness: NotchSmoothness.defaultEdge,
-
-        leftCornerRadius: 32,
-        rightCornerRadius: 32,
-        inactiveColor: Colors.grey,
+      bottomNavigationBar: GNav(
+        backgroundColor: Colors.white,
+        color: Color.fromARGB(255, 190, 190, 190),
+        gap: 8,
         activeColor: const Color(0xff2d3c4e),
-        onTap: (index) => setState(() => _selectedIndex = index),
-        //other params
+        padding: EdgeInsets.all(20),
+        curve: Curves.easeOutExpo,
+
+        // ignore: prefer_const_literals_to_create_immutables
+        tabs: const [
+          GButton(
+            icon: Icons.home,
+            // text: 'Home',
+          ),
+          GButton(
+            icon: Icons.description,
+            //text: 'Home',
+          ),
+          GButton(
+            icon: Icons.search,
+            //text: 'Home',
+          ),
+          GButton(
+            icon: Icons.person,
+            //text: 'Profile',
+          ),
+        ],
+        selectedIndex: _selectedIndex,
+        onTabChange: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
       ),
     );
   }
@@ -112,18 +113,23 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
                 padding: const EdgeInsets.only(
                   left: 20,
                   right: 20,
+                  bottom: 10,
+                ),
+                height: size.height * 0.2 - 37,
+                decoration: const BoxDecoration(
+                  color: Color(0xff2d3c4e),
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(36),
+                    bottomRight: Radius.circular(36),
+                  ),
                 ),
                 child: Row(
                   children: <Widget>[
                     const Padding(
-                      padding: EdgeInsets.only(
-                        left: 15,
-                        top: 10,
-                      ),
+                      padding: EdgeInsets.only(left: 10, bottom: 0),
                       child: Text(
                         'Hi, Yuri',
                         style: TextStyle(
-                          backgroundColor: Color.fromARGB(0, 255, 193, 7),
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 25,
@@ -135,7 +141,8 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
                 ),
               ),
               Positioned(
-                bottom: 34, right: 30,
+                bottom: 10,
+                right: 30,
                 left: 30,
                 //drop down wala box
 
@@ -153,20 +160,12 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
         //recent documents wala text
         Row(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 20,
-                right: 20,
-              ),
-              child: TitleRecents(
-                text: "Recent Documents",
-              ),
+            TitleRecents(
+              text: "Recent Documents",
             ),
           ],
         ),
-        const SizedBox(
-          height: 2,
-        ),
+
         const RecentScrollMenu(),
         majorDivider(),
         const SizedBox(
@@ -174,14 +173,8 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
         ),
         Row(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 20,
-                right: 20,
-              ),
-              child: TitleRecents(
-                text: "Family Members",
-              ),
+            TitleRecents(
+              text: "Family Members",
             ),
           ],
         ),
@@ -191,7 +184,6 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
   }
 
 //ye method bna hua h drop down ka joh home screen pr h
-  // ignore: non_constant_identifier_names
   Container DropDownHomeScreen() {
     return Container(
       margin: const EdgeInsets.only(
@@ -273,10 +265,7 @@ class FamilyScrollMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(
-        left: 10,
-        right: 5,
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 2.0, vertical: 12.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -357,18 +346,14 @@ class RecentScrollMenu extends StatelessWidget {
     Icons.arrow_upward_rounded,
     color: Color(0xff2d3c4e),
   );
-
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Container(
-      padding: const EdgeInsets.only(
-        left: 10,
-        right: 5,
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 2.0, vertical: 12.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          const SizedBox(height: 3.0),
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Container(

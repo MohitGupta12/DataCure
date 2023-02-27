@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:login/screens/lockerscreen.dart';
 import 'screens/LoginPage.dart';
 import 'screens/splash.dart';
 
@@ -12,9 +11,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: const Color(0xff2d3c4e),
-      ),
       home: const Splash(),
       routes: {
         'login': (context) => const LoginPage(),
