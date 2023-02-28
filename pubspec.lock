@@ -9,6 +9,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.16"
+  animated_bottom_navigation_bar:
+    dependency: "direct main"
+    description:
+      name: animated_bottom_navigation_bar
+      sha256: a26653d88e005f80469b6e4c1a68115f65b4d0d6bb948607feed6eb5d6cdb84d
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0+1"
   async:
     dependency: transitive
     description:
@@ -18,7 +26,7 @@ packages:
     source: hosted
     version: "2.10.0"
   auth_buttons:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: auth_buttons
       sha256: "5254571a08863044a05b860cfa3d209807025b14d3990f52f9610d3a09081bf9"
@@ -98,7 +106,7 @@ packages:
     source: hosted
     version: "1.0.5"
   curved_navigation_bar:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: curved_navigation_bar
       sha256: ea6412d00c5d83501bbf1cf9d1ac2ff11a20fbaf910c103c95ace7de82910334
@@ -106,7 +114,7 @@ packages:
     source: hosted
     version: "1.0.3"
   email_validator:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: email_validator
       sha256: e9a90f27ab2b915a27d7f9c2a7ddda5dd752d6942616ee83529b686fc086221b
@@ -138,7 +146,7 @@ packages:
     source: hosted
     version: "6.1.4"
   file_picker:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: file_picker
       sha256: d090ae03df98b0247b82e5928f44d1b959867049d18d73635e2e0bc3f49542b9
@@ -170,7 +178,7 @@ packages:
     source: hosted
     version: "5.2.8"
   firebase_core:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: firebase_core
       sha256: fe30ac230f12f8836bb97e6e09197340d3c584526825b1746ea362a82e1e43f7
@@ -194,7 +202,7 @@ packages:
     source: hosted
     version: "2.2.1"
   firebase_storage:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: firebase_storage
       sha256: fac4ebf20da0ff7c7f23596d741130a85e8bd5fac4cabf8f568f38ba55fba19d
@@ -218,12 +226,12 @@ packages:
     source: hosted
     version: "3.3.23"
   flutter:
-    dependency: "direct dev"
+    dependency: "direct main"
     description: flutter
     source: sdk
     version: "0.0.0"
   flutter_facebook_auth:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: flutter_facebook_auth
       sha256: "779215296119c156975d4f596a7434a1fa35c0ef304f2ead3c17c1546499c6c5"
@@ -247,7 +255,7 @@ packages:
     source: hosted
     version: "2.6.0+2"
   flutter_lints:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: flutter_lints
       sha256: aeb0b80a8b3709709c9cc496cdc027c5b3216796bc0af0ce1007eaf24464fd4c
@@ -270,8 +278,16 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.6"
-  flutter_test:
+  flutter_swipable:
     dependency: "direct main"
+    description:
+      name: flutter_swipable
+      sha256: a341e0a7ea7a0d3a6efc753e0d0608462e702b01562cb3b0768c7d5fbb86d033
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.1"
+  flutter_test:
+    dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
@@ -281,7 +297,7 @@ packages:
     source: sdk
     version: "0.0.0"
   get:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: get
       sha256: "2ba20a47c8f1f233bed775ba2dd0d3ac97b4cf32fc17731b3dfc672b06b0e92a"
@@ -289,7 +305,7 @@ packages:
     source: hosted
     version: "4.6.5"
   google_fonts:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: google_fonts
       sha256: "8f099045e2f2a30e4d4d0a35f40c6bc941a8f2ca0e10ad9d214ee9edd3f37483"
@@ -297,7 +313,7 @@ packages:
     source: hosted
     version: "3.0.1"
   google_nav_bar:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: google_nav_bar
       sha256: "1c8e3882fa66ee7b74c24320668276ca23affbd58f0b14a24c1e5590f4d07ab0"
@@ -305,7 +321,7 @@ packages:
     source: hosted
     version: "5.0.6"
   hexcolor:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: hexcolor
       sha256: c07f4bbb9095df87eeca87e7c69e8c3d60f70c66102d7b8d61c4af0453add3f6
@@ -574,5 +590,5 @@ packages:
     source: hosted
     version: "6.2.2"
 sdks:
-  dart: ">=2.19.2 <3.0.0"
+  dart: ">=2.18.6 <3.0.0"
   flutter: ">=3.0.0"

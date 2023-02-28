@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:datacure/screens/Home/homescreen.dart';
+import 'package:datacure/screens/homescreen.dart';
 //import 'package:google_sign_in/google_sign_in.dart';
 import 'InputField.dart';
 import 'package:auth_buttons/auth_buttons.dart'

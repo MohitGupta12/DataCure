@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:datacure/screens/Authentication/LoginPage.dart';
+import 'package:datacure/screens/LoginPage.dart';
 import 'screens/splash.dart';
 
 void main() => runApp(const MyApp());

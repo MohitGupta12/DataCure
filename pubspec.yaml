@@ -1,30 +1,25 @@
 name: datacure
 description: A new Flutter project.
 
-publish_to: 'none'
+publish_to: "none"
+
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.19.2 <3.0.0'
+  sdk: ">=2.18.6 <3.0.0"
 
 dependencies:
-  flutter_lints: ^2.0.0
-  flutter_test:
-    sdk: flutter
-  curved_navigation_bar: ^1.0.3 
-
+  animated_bottom_navigation_bar: ^1.1.0+1
+  cloud_firestore: ^4.3.1
   cupertino_icons: ^1.0.2
-  firebase_auth: ^4.2.9
-  cloud_firestore: ^4.4.3
-
-dev_dependencies:
   email_validator: ^2.1.17
   file_picker: ^5.2.5
+  firebase_auth: ^4.2.5
   firebase_core: ^2.4.1
   firebase_storage: ^11.0.10
   flutter: 
     sdk: flutter
-
+  flutter_swipable:
   get: ^4.6.5
   google_fonts: ^3.0.1
   hexcolor: ^3.0.1
@@ -32,6 +27,13 @@ dev_dependencies:
   google_nav_bar: ^5.0.6
   flutter_facebook_auth: ^3.5.0
 
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+  curved_navigation_bar: ^1.0.3 
+  
+  
 flutter:
   uses-material-design: true
 
