@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:datacure/components/appBar.dart';
+import 'package:login/components/appBar.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -11,6 +11,7 @@ class ProfilePage extends StatelessWidget {
           color: Color.fromARGB(255, 255, 255, 255),
         ),
         child: Scaffold(
+          backgroundColor: const Color(0xff2d3c4e),
           appBar: null,
           body: ListView(
             children: <Widget>[
@@ -24,27 +25,39 @@ class ProfilePage extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
                           ),
-                          child: ListTile(
-                            leading: const CircleAvatar(
-                              radius: 30.0,
-                              backgroundImage: NetworkImage(
-                                  'https://i.pravatar.cc/150?img=5'),
+                          child: Padding(
+                            padding: const EdgeInsets.only(
+                              top: 10,
+                              bottom: 10,
+                              right: 20,
+                              left: 10,
                             ),
-                            title: const Text(
-                              'Sam Reeves',
-                              style: TextStyle(
-                                fontSize: 24.0,
-                                fontWeight: FontWeight.bold,
+                            child: ListTile(
+                              leading: const CircleAvatar(
+                                radius: 30.0,
+                                backgroundImage: NetworkImage(
+                                    'https://i.pravatar.cc/150?img=5'),
                               ),
-                            ),
-                            subtitle: Text(
-                              'sam.reeves@gmail.com',
-                              style: TextStyle(
-                                fontSize: 18.0,
-                                color: Colors.grey[600],
+                              title: const Text(
+                                'Sam Reeves',
+                                style: TextStyle(
+                                  fontSize: 24.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: const Color(0xff2d3c4e),
+                                ),
+                              ),
+                              subtitle: Text(
+                                'sam.reeves@gmail.com',
+                                style: TextStyle(
+                                  fontSize: 14.0,
+                                  color: Colors.grey[600],
+                                ),
                               ),
                             ),
                           ),
+                        ),
+                        const SizedBox(
+                          height: 20,
                         ),
                         const SizedBox(height: 20.0),
                         Card(
@@ -59,16 +72,17 @@ class ProfilePage extends StatelessWidget {
                                     // ignore: prefer_const_literals_to_create_immutables
                                     children: [
                                       const SizedBox(height: 10.0),
+                                      // myListTile(),
                                       const ListTile(
-                                        leading: Icon(Icons.person),
+                                        leading: Icon(Icons.verified_user),
                                         title: Text(
                                           'My Account',
                                           style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
-                                        subtitle: Text(
-                                            'Make changes to your account'),
+                                        // subtitle: Text(
+                                        //     'Manage your shared documents'),
                                         trailing: Icon(Icons.arrow_forward_ios),
                                       ),
                                       const ListTile(
@@ -79,8 +93,8 @@ class ProfilePage extends StatelessWidget {
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
-                                        subtitle: Text(
-                                            'Manage your shared documents'),
+                                        // subtitle: Text(
+                                        //     'Manage your shared documents'),
                                         trailing: Icon(Icons.arrow_forward_ios),
                                       ),
                                       const ListTile(
@@ -91,8 +105,8 @@ class ProfilePage extends StatelessWidget {
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
-                                        subtitle: Text(
-                                            'Manage your family documents'),
+                                        // subtitle: Text(
+                                        //     'Manage your family documents'),
                                         trailing: Icon(Icons.arrow_forward_ios),
                                       ),
                                       const ListTile(
@@ -103,8 +117,8 @@ class ProfilePage extends StatelessWidget {
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
-                                        subtitle: Text(
-                                            'Further secure your account for safely'),
+                                        // subtitle: Text(
+                                        //     'Further secure your account for safely'),
                                         trailing: Icon(Icons.arrow_forward_ios),
                                       ),
                                       const ListTile(
@@ -115,10 +129,48 @@ class ProfilePage extends StatelessWidget {
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
-                                        subtitle: Text(
-                                            'Further secure your account for safety'),
+                                        // subtitle: Text(
+                                        //     'Further secure your account for safety'),
                                         trailing: Icon(Icons.arrow_forward_ios),
                                       ),
+                                      const ListTile(
+                                        leading: Icon(Icons.settings),
+                                        title: Text(
+                                          'Settings',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        trailing: Icon(Icons.arrow_forward_ios),
+                                      ),
+                                      const ListTile(
+                                        leading: Icon(Icons.help),
+                                        title: Text(
+                                          'Help and Support',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        trailing: Icon(Icons.arrow_forward_ios),
+                                      ),
+                                    ]))),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    // ignore: prefer_const_literals_to_create_immutables
+                                    children: [
+                                      const SizedBox(height: 10.0),
+                                      // myListTile(),
+
                                       const ListTile(
                                         leading: Icon(Icons.settings),
                                         title: Text(
@@ -145,4 +197,24 @@ class ProfilePage extends StatelessWidget {
           ),
         ));
   }
+
+  // ListTile myListTile(IconData icon, String title, String subTitle) {
+  //   return ListTile(
+  //     leading: Icon(
+  //       icon,
+  //       size: 32,
+  //       color: Color(0xff2d3c4e),
+  //     ),
+  //     title: Text(
+  //       title,
+  //       style: TextStyle(
+  //         fontWeight: FontWeight.bold,
+  //         color: Color(0xff2d3c4e),
+  //       ),
+  //     ),
+  //     subtitle: Text(
+  //       subTitle,
+  //       style: TextStyle(color: Colors.grey, fontSize: 14),
+  //     ),
+  //   );
 }
