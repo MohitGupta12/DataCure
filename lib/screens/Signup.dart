@@ -3,9 +3,14 @@ import 'package:datacure/components/InputField_signup.dart';
 import '../components/Header.dart';
 import '../components/InputWrapper.dart';
 
-class Signup extends StatelessWidget {
+class Signup extends StatefulWidget {
   const Signup({super.key});
 
+  @override
+  State<Signup> createState() => _SignupState();
+}
+
+class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

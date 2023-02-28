@@ -1,4 +1,6 @@
+import 'package:datacure/main.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 
@@ -30,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final double size = MediaQuery.of(context).size.width;
     return Scaffold(
+      key: scaffoldKey,
       backgroundColor: const Color(0xff2d3c4e),
       appBar: AppBar(
         leading: const Icon(Icons.access_alarm),

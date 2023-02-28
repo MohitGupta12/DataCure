@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:datacure/components/appBar.dart';
+import 'package:datacure/repository/authentication_repository/authentication_repository.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -121,9 +121,14 @@ class ProfilePage extends StatelessWidget {
                                         //     'Further secure your account for safely'),
                                         trailing: Icon(Icons.arrow_forward_ios),
                                       ),
-                                      const ListTile(
-                                        leading: Icon(Icons.logout),
-                                        title: Text(
+                                      ListTile(
+                                        onTap: () {
+                                          AuthenticationRepository.instance
+                                              .logout();
+                                          // You can add any additional code here that you want to run after logout.
+                                        },
+                                        leading: const Icon(Icons.logout),
+                                        title: const Text(
                                           'Log Out',
                                           style: TextStyle(
                                             fontWeight: FontWeight.bold,
@@ -131,7 +136,8 @@ class ProfilePage extends StatelessWidget {
                                         ),
                                         // subtitle: Text(
                                         //     'Further secure your account for safety'),
-                                        trailing: Icon(Icons.arrow_forward_ios),
+                                        trailing:
+                                            const Icon(Icons.arrow_forward_ios),
                                       ),
                                       const ListTile(
                                         leading: Icon(Icons.settings),
