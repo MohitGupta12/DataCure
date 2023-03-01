@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:datacure/repository/authentication_repository/exceptions/signup_email_password_failure.dart';
 import 'package:datacure/screens/gettingStarted.dart';
 import 'package:datacure/screens/homescreen.dart';
@@ -23,6 +25,7 @@ class AuthenticationRepository extends GetxController {
   //       ? Get.off(() => const GettingStarted())
   //       : Get.off(() => const HomeScreen());
   // }
+
   _setInitialScreen(User? user) {
     try {
       user == null
@@ -53,6 +56,29 @@ class AuthenticationRepository extends GetxController {
       const ex = SignUpWithEmailAndPasswordFailure();
       print('EXCEPTION - ${ex.message}');
       throw ex;
+    }
+  }
+
+  // ignore: non_constant_identifier_names
+  Future LoginUserWithEmailAndPassword(String email, String password) async {
+    try {
+      await _auth.signInWithEmailAndPassword(email: email, password: password);
+      try {
+        firebaseUser.value != null
+            ? Get.off(() => const HomeScreen())
+            : Get.to(() => const GettingStarted());
+        return 1;
+      } catch (e) {
+        print('Error while setting initial screen: $e');
+        return null;
+      }
+    } on FirebaseAuthException catch (e) {
+      print('Failed with error code: ${e.code}');
+      print(e.message);
+      return null;
+    } catch (e) {
+      rethrow;
+      return null;
     }
   }
 

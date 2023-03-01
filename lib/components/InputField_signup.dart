@@ -165,8 +165,6 @@ class InputField_signup extends StatelessWidget {
                   //child: Button(),
                   //TODO: add logic to this
                   onPressed: () {
-                    print('signUp is pressed');
-                    print(_formKey.currentState);
                     // if (__formKey.currentState!.validate()) {
                     if (_formKey.currentState != null &&
                         _formKey.currentState!.validate()) {

@@ -203,24 +203,4 @@ class ProfilePage extends StatelessWidget {
           ),
         ));
   }
-
-  // ListTile myListTile(IconData icon, String title, String subTitle) {
-  //   return ListTile(
-  //     leading: Icon(
-  //       icon,
-  //       size: 32,
-  //       color: Color(0xff2d3c4e),
-  //     ),
-  //     title: Text(
-  //       title,
-  //       style: TextStyle(
-  //         fontWeight: FontWeight.bold,
-  //         color: Color(0xff2d3c4e),
-  //       ),
-  //     ),
-  //     subtitle: Text(
-  //       subTitle,
-  //       style: TextStyle(color: Colors.grey, fontSize: 14),
-  //     ),
-  //   );
 }
