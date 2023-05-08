@@ -51,7 +51,7 @@ The app consists of four screens:
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/medical-document-storage-app.git`
+1. Clone the repository: `git clone https://github.com/MohitGupta12/DataCure/edit/master/README.md`
 2. Open the project in your preferred IDE
 3. Run the command `flutter run` to launch the app
 
@@ -61,4 +61,4 @@ We welcome contributions from anyone interested in improving this app. Please fo
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for more information.
+This project is licensed underway. 
