@@ -1,4 +1,4 @@
-# Medical Document Storage App
+# DataCure (Medical Document Storage App)
 
 This app allows users to store their medical documents securely and access them anytime. It also features a health-related content feed with articles, riddles, and quizzes to educate users about various health topics.
 
