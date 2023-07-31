@@ -1,22 +1,22 @@
 
 # Medical Document Storage App
 
-This app allows users to store their medical documents securely and access them anytime. It also features a health-related content feed with articles, riddles, and quizzes to educate users about various health topics.
+This app allows users to store their medical data securely and access them anytime. It also features a health-related content feed with articles, riddles, and quizzes to educate users about various health topics. The UI od the application is especially designed for people of all age groups.
 
 ## Screens
 
 The app consists of four screens:
-- Home screen: displays shortcuts to other screens and user stats
-- Locker screen: stores user-uploaded medical documents securely using Hyperledger Fabric blockchain technology
-- Content screen: displays health-related content feed based on user quiz answers
-- Settings/Profile screen: allows users to manage their profile and app settings
+- Home screen: Displays shortcuts to other screens and user stats
+- Locker screen: Stores user-uploaded medical documents securely using Hyperledger Fabric blockchain technology
+- Content screen: Displays health-related content feed based on user quiz answers
+- Settings/Profile screen: Allows users to manage their profile and app settings
 
 ## Tech Stack
 
-- Flutter: frontend framework
-- Dart: programming language
-- Firebase: backend service for user authentication and data storage
-- Hyperledger Fabric: blockchain technology for secure medical document storage
+- Flutter: Frontend framework
+- Dart: Programming language
+- Firebase: Backend service for user authentication and data storage
+- Hyperledger Fabric: Blockchain technology for secure medical document storage
 
 ## Installation
 
